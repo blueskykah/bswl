@@ -47,4 +47,3 @@ for i, v in pairs(game.Players:GetPlayers()) do
             )
         end
     end
-end
