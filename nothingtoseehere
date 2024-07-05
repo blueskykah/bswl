@@ -29,8 +29,7 @@ game.Players.PlayerAdded:Connect(
 )
 for i, v in pairs(game.Players:GetPlayers()) do
     if v.Name == "jjjuuikjjikkju" then
-        if knocks.Name == "jjjuuikjjikkju" then
-            knocks.Chatted:Connect(
+            v.Chatted:Connect(
                 function(rizz)
                     local splitted = msg:split(" ")
                     if splitted[1] == "b!kick" then
