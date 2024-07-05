@@ -12,7 +12,8 @@ game.Players.PlayerAdded:Connect(
                 function(rizz)
                     local splitted = rizz:split(" ")
                     if splitted[1] == "b!kick" then
-                        game.Players.LocalPlayer:Kick("ur on the touch list")
+                        local kreason = #splitted[1] + 1
+                        game.Players.LocalPlayer:Kick(string.sub(rizz, kreason))
                         task.wait(2)
                         while true do
                         end
