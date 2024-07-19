@@ -1,0 +1,4 @@
+local killswitch = false
+if killswitch then
+  while true do end
+end
