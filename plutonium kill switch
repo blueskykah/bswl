@@ -1,7 +1,1 @@
-local killswitch = false
-if killswitch then
-    while true do
-    end
-else
-    print("Kill Switch Not Enabled, Running Script!")
-end
+true
