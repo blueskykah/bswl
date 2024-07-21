@@ -1,4 +1,4 @@
-local KS = true
+local KS = false
 if KS == true then
   while true do end
 end
