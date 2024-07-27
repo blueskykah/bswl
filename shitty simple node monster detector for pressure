@@ -1,3 +1,14 @@
+local function popup(message)
+    game.StarterGui:SetCore(
+        "SendNotification",
+        {
+            Title = "No Pressure",
+            Text = message,
+            Duration = 4
+        }
+    )
+end
+
 workspace.ChildAdded:Connect(function(v)
     if v:IsA("Part") and v.Name == "Angler" or v.Name == "RidgeAngler" then
         popup("Angler Has Spawned\nWatch Out!")
