@@ -1,0 +1,17 @@
+workspace.ChildAdded:Connect(function(v)
+    if v:IsA("Part") and v.Name == "Angler" or v.Name == "RidgeAngler" then
+        popup("Angler Has Spawned\nWatch Out!")
+    elseif v:IsA("Part") and v.Name == "Froger" or v.Name == "RidgeFroger" then
+        popup("Froger Has Spawned\nWatch Out!")
+    elseif v:IsA("Part") and v.Name == "Pinkie" or v.Name == "RidgePinkie" then
+        popup("Pinkie Has Spawned\nWatch Out!")
+    elseif v:IsA("Part") and v.Name == "Pandemonium" then
+        popup("Pandemonium Has Spawned\nHIDE!")
+    elseif v:IsA("Part") and v.Name == "A60" then
+        popup("The Multi-Monster Has Spawned\nHIDE!")
+    elseif v:IsA("Part") and v.Name == "Chainsmoker" or v.Name == "RidgeChainsmoker" then
+        popup("Chainsmoker Has Spawned\nHold Your Breath!")
+    elseif v:IsA("Part") and v.Name == "Blitz" or v.Name == "RidgeBlitz" then
+        popup("Blitz Has Spawned\nWatch Out!")
+    end
+end)
